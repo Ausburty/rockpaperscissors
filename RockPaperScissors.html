@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+</head>
+<body>
+<script>
+    <!--Get input from individual---->
+    let userChoice = prompt("Pick Rock, Paper, or Scissors")
+    
+    <!---Standardize the users input so that we can use boolean-->
+        let userLowerChoice = userChoice.toLowerCase()
+   
+    <!--random number gen---->
+        function getRandomInt(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1) + min);}
+   
+     <!--decleration of winner function---->    
+        function winLooseOrDrawl(userChose, ComputerChose){
+    if(userChose === computerPick){console.log ("its a drawl!")}
+                             else{ if(userChose === "rock" && ComputerChose === "paper"){console.log("you lose")}
+                                else{if(userChose === "rock" && ComputerChose === "scissors"){console.log("you win")}
+                                    else{if(userChose === "paper" && ComputerChose === "scissors"){console.log("you lose") }
+                                            else{if(userChose === "paper" && ComputerChose === "rock"){console.log("you win")}
+                                                 else{if(userChose === "scissors" && ComputerChose === "paper"){console.log("you win")}
+                                                     else{if(userChose === "scissors" && ComputerChose === "rock"){console.log("you lose")}}}}}}}
+}
+   
+
+<!--if than logic that assigns rock paper or scissors to random number----> 
+if (userLowerChoice === "rock" || userLowerChoice === "paper" || userLowerChoice === "scissors"){
+        console.log("User Picked"+ " "+userLowerChoice+ "!")
+        let randomInt = getRandomInt(1, 3);
+            
+        if(randomInt===1){let computerPick="rock"; console.log("The computer picked"+" "+computerPick+"!");winLooseOrDrawl(userLowerChoice, computerPick)}
+            else{
+                if(randomInt===2){let computerPick="paper"; console.log("The computer picked"+" "+computerPick+"!");winLooseOrDrawl(userLowerChoice, computerPick)}
+                    else{let computerPick="scissors"; console.log("The computer picked"+" "+computerPick+"!");winLooseOrDrawl(userLowerChoice, computerPick)}
+                }}
+           
+           
+           
+    else{
+          console.log("you lose because you didn't pick rock paper or scissors. Refresh and try again." )
+        }
+
+
+                            
+                
+       
+       
+
+       
+
+
+
+  
+
+</script>
+
+    
+</body>
+</html>
